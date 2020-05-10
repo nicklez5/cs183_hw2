@@ -1,0 +1,62 @@
+#!/bin/bash
+X="hello.txt"
+
+# dd command:  prints hello world2 and dd writes to FILE instead of stdout by the of
+echo "Hello World2" | dd of="$X"
+
+# find command, use to find a filename or matching expression in user given directory. 
+find . -name "$X" -print
+
+# file command : describes the type of data contained in a computer file
+file "$X" 
+
+# fuser command : determines which process are accessing your $X file
+fuser -v -m "$X"
+
+# grep command: search for this particular word pattern in the file name
+grep "Hello" "$X"
+
+# host command: used to find the IP address of a particular domain name 
+host geeksforgeeks.org
+
+# ldd command: displays the shared library dependencies of an executable or even that of a shared libray
+ldd /bin/cp
+
+# lsof command: list every file that are opened based on argument [ can include a user or root as an argument ] 
+lsof -i 4
+
+# mount command: mounts a file system in a given location(mount point), can list mounted file systems
+mount
+
+# ps command: list the currently running processes and their PIDS 
+ps
+
+# pkill command: kills a process , must input the process number
+pkill ping
+
+# netstat command: checking your network configuration and activity 
+netstat -nr 
+
+# renice command : changes the value of a process [ old value new value ] 
+renice 1188 1187 
+
+# rsync command : remotely sync a directory. copies a local directory  to a remoate directory 
+rsync -r dir1/ dir2
+
+# time command : used to execute a command a prints a summary of real time, user CPU time and system CPU time spent by executing a command when it terminates
+time -p sleep 2
+
+# ssh command: program for logging into a remote machine and executing commands on a remote machine
+ssh -D 9999 username@remotehost.net
+
+# stat command : displays the detailed status of a particular file or file system
+stat -f hello.txt
+
+# strace command : trace system calls and signals. it records system calls when called by a process
+strace -c ls
+
+# uname command: reports the basic data about a computer's software and hardware.
+uname -rs
+
+# wget command: free uttility for non-interactive download of files from the web[ given a location of a file to download over HTTP]
+wget http://www.sayka.com/downloads/front_view.jpg
